@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.url = '../../assets' + this.offre?.logo;
+    this.url = 'assets' + this.offre?.logo;
     console.log(this.url);
   }
 
