@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Spartan";
+  src: local("Spartan"), url(./assets/Spartan/Spartan-VariableFont_wght.ttf) format("truetype");
+}
+
+h1,h2,h3,h4,p,span,div{
+  font-family: 'Spartan';
+  font-size: 15px;
+}
