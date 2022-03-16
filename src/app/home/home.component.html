@@ -1,7 +1,14 @@
 <div class="w-screen h-full bg-background">
-  <img class="w-full bg-primary" src="assets/img/bg-header-desktop.svg"/>
+  <div id="filter" class=" flex-row flex rounded drop-shadow-lg absolute w-3/5 ml- h-16 bg-white z-10">
+    <div (click)="removeFilter(attr)" class="flex-inital flex-row flex overflow-hidden rounded  cursor-pointer ml-2 mr-2 mt-auto mb-auto text-primary bg-background hover:text-white hover:bg-primary" *ngFor="let attr of filter">
+      <p class="text-center font-bold flex-1 ml-2 mr-2">{{attr}}</p>
+      <p class="bg-primary flex-initial hover:bg-very-dark w-5 text-white text-center">x</p>
+    </div>
+  </div>
+  <img class="w-full bg-primary relative" src="assets/img/bg-header-desktop.svg"/>
   <div class="h-full mt-20">
-    <app-card *ngFor="let offre of offres" [offre]="offre"></app-card>
+
+    <app-card *ngFor="let offre of offres" (filter)="addFilter($event)" [offre]="offre"></app-card>
   </div>
 </div>
 

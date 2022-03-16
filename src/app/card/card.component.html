@@ -15,9 +15,15 @@
       <span class="flex-1">{{offre?.postedAt}}</span><span class="flex-1">{{offre?.contract}}</span><span class="flex-1">{{offre?.location}}</span>
     </div>
   </div>
-  <div class="flex-1">
-    <span>{{offre?.role}}</span>
-    <span>{{offre?.level}}</span>
-    <span *ngFor="let attr of offre?.languages">{{attr}}</span>
+  <div class="flex-1 flex">
+    <!-- <div class="flex-1 rounded ml-1 mr-1 mt-auto mb-auto bg-background">
+      <p class="text-center font-bold text-primary">{{offre?.role}}</p>
+    </div>
+    <div class="flex-1 rounded m-auto ml-1 mr-1 mt-auto mb-auto bg-background">
+      <p class="text-center font-bold text-primary">{{offre?.level}}</p>
+    </div> -->
+    <div (click)="addFilter(attr)" class="flex-1 rounded m-auto cursor-pointer ml-1 mr-1 mt-auto mb-auto text-primary bg-background hover:text-white hover:bg-primary" *ngFor="let attr of attributs">
+      <p class="text-center font-bold ">{{attr}}</p>
+    </div>
   </div>
 </div>
