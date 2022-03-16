@@ -4,12 +4,16 @@
   </div>
   <div class="flex-initial flex w-80 flex-col">
     <div class="flex-1 flex text-primary">
-      <p class="mt-auto font-bold">
-        {{offre?.company}} <span *ngIf="offre?.new">NEW </span> <span *ngIf="offre?.featured">FEATURED</span>
-      </p>
+      <div class="mt-auto font-bold flex flex-row">
+        <p class="mr-8">{{offre?.company}}</p>
+         <div *ngIf="offre?.new" class="rounded-full bg-primary text-white mr-2"><p class="text-xs m-1 mr-2 ml-2">NEW!</p></div>
+         <div *ngIf="offre?.featured" class="rounded-full bg-black text-white mr-2" ><p class="text-xs m-1 mr-2 ml-2">FEATURED</p></div>
+      </div>
     </div>
-    <div class="flex-1"><h2>{{offre?.position}}</h2></div>
-    <div class="flex-1"><span>{{offre?.postedAt}}</span><span>{{offre?.contract}}</span><span>{{offre?.location}}</span></div>
+    <div class="flex-1 flex"><p class="mt-auto mb-auto font-extrabold text-lg text-primary">{{offre?.position}}</p></div>
+    <div class="flex-1 text-gray-400 flex w-60" >
+      <span class="flex-1">{{offre?.postedAt}}</span><span class="flex-1">{{offre?.contract}}</span><span class="flex-1">{{offre?.location}}</span>
+    </div>
   </div>
   <div class="flex-1">
     <span>{{offre?.role}}</span>
